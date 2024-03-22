@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #quote {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        #author {
+            font-size: 18px;
+            font-style: italic;
+        }
+        button {
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Quote Generator</h1>
+    <p id="quote"></p>
+    <p id="author"></p>
+    <button onclick="getRandomQuote()">Get Random Quote</button>
+
+    <script>
+        function getRandomQuote() {
+            const quotes = [
+              {
+                "author": "Albert Einstein",
+                "quote": "Imagination is more important than knowledge."
+              },
+              {
+                "author": "Maya Angelou",
+                "quote": "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel."
+              },
+              {
+                "author": "Mark Twain",
+                "quote": "The two most important days in your life are the day you are born and the day you find out why."
+              },
+              {
+                "author": "Helen Keller",
+                "quote": "The only thing worse than being blind is having sight but no vision."
+              },
+              {
+                "author": "Oscar Wilde",
+                "quote": "Be yourself; everyone else is already taken."
+              },
+              {
+                "author": "Steve Jobs",
+                "quote": "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do."
+              },
+              {
+                "author": "Ralph Waldo Emerson",
+                "quote": "Do not go where the path may lead, go instead where there is no path and leave a trail."
+              },
+              {
+                "author": "Audrey Hepburn",
+                "quote": "The most important thing is to enjoy your life – to be happy – it's all that matters."
+              },
+              {
+                "author": "Eleanor Roosevelt",
+                "quote": "No one can make you feel inferior without your consent."
+              },
+              {
+                "author": "Confucius",
+                "quote": "Our greatest glory is not in never falling, but in rising every time we fall."
+              }
+            ];
+
+            const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomQuoteIndex];
+
+            document.getElementById("quote").innerHTML = `"${randomQuote.quote}"`;
+            document.getElementById("author").innerHTML = `- ${randomQuote.author}`;
+        };
+        getRandomQuote();
+         
+    </script>
+</body>
+</html>
